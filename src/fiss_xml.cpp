@@ -55,8 +55,8 @@ static bool is_uppercase(char cc)
 static bool is_extension(const char* fname, const char* ename)
 {
 	int n;
-	int elen = strlen(ename); 
-	int flen = strlen(fname) - elen - 1;
+	size_t elen = strlen(ename); 
+	size_t flen = strlen(fname) - elen - 1;
 	if (flen<=0) return true;
 	if (fname[flen]!='.') return false;
 	for (n=0; n<elen; n++)
@@ -83,7 +83,8 @@ static bool is_root_path(const char* path)
 
 static void fopen_mkdir(const char* name, bool is_path_ony)
 {
-	int i, offset=0, len=strlen(name);
+	size_t i, offset=0;
+	size_t len=strlen(name);
 	#if defined(_MSC_VER)
 	char* mname = _strdup(name);
 	#else
@@ -131,7 +132,7 @@ static void fopen_mkdir(const char* name, bool is_path_ony)
 void cfiss_beginLoad(CFISS* obj, const char* filename)
 {
 	char fname[1500], header[80], *buffer, *pch;
-	long lSize, result;
+	size_t lSize, result;
 	FILE *pFile;
 
 	if (obj==NULL) return;
@@ -247,7 +248,7 @@ float cfiss_loadFloat(CFISS* obj, const char* name)
 {
 	const char* var = cfiss_loadString(obj, name);
 	if (var[0]==0) return 0.0;
-	return atof(var);
+	return (float) atof(var);
 }
 int cfiss_loadInt(CFISS* obj, const char* name)
 {

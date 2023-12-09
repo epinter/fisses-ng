@@ -1,24 +1,26 @@
+#pragma once
 
-#include "skse64/PapyrusNativeFunctions.h"
+typedef signed long                     SInt32;
 
-namespace FissesPlugin
+namespace Fisses
 {
-	BSFixedString	CFissBeginLoad(StaticFunctionTag *base, BSFixedString filename);
-	BSFixedString	CFissLoadString(StaticFunctionTag *base, BSFixedString obj, BSFixedString name);
-	bool			CFissLoadBool(StaticFunctionTag *base, BSFixedString obj, BSFixedString name);
-	float			CFissLoadFloat(StaticFunctionTag *base, BSFixedString obj, BSFixedString name);
-	SInt32 			CFissLoadInt(StaticFunctionTag *base, BSFixedString obj, BSFixedString name);
-	BSFixedString	CFissEndLoad(StaticFunctionTag *base, BSFixedString obj);
+	RE::BSFixedString	CFissBeginLoad(RE::StaticFunctionTag *base, RE::BSFixedString filename);
+	RE::BSFixedString	CFissLoadString(RE::StaticFunctionTag *base, RE::BSFixedString obj, RE::BSFixedString name);
+	bool			CFissLoadBool(RE::StaticFunctionTag *base, RE::BSFixedString obj, RE::BSFixedString name);
+	float			CFissLoadFloat(RE::StaticFunctionTag *base, RE::BSFixedString obj, RE::BSFixedString name);
+	SInt32 			CFissLoadInt(RE::StaticFunctionTag *base, RE::BSFixedString obj, RE::BSFixedString name);
+	RE::BSFixedString	CFissEndLoad(RE::StaticFunctionTag *base, RE::BSFixedString obj);
 
 
-	BSFixedString	CFissBeginSave(StaticFunctionTag *base, BSFixedString filename, BSFixedString modname);
-	void			CFissSaveBool(StaticFunctionTag *base, BSFixedString obj, BSFixedString name, bool value);
-	void			CFissSaveString(StaticFunctionTag *base, BSFixedString obj, BSFixedString name, BSFixedString value);
-	void			CFissSaveFloat(StaticFunctionTag *base, BSFixedString obj, BSFixedString name, float value);
-	void			CFissSaveInt(StaticFunctionTag *base, BSFixedString obj, BSFixedString name, SInt32 value);
-	BSFixedString	CFissEndSave(StaticFunctionTag *base, BSFixedString obj);
-	BSFixedString	CFissSaveTextToTxtFile(StaticFunctionTag *base, BSFixedString filename, BSFixedString text);
+	RE::BSFixedString	CFissBeginSave(RE::StaticFunctionTag *base, RE::BSFixedString filename, RE::BSFixedString modname);
+	void			CFissSaveBool(RE::StaticFunctionTag *base, RE::BSFixedString obj, RE::BSFixedString name, bool value);
+	void			CFissSaveString(RE::StaticFunctionTag *base, RE::BSFixedString obj, RE::BSFixedString name, RE::BSFixedString value);
+	void			CFissSaveFloat(RE::StaticFunctionTag *base, RE::BSFixedString obj, RE::BSFixedString name, float value);
+	void			CFissSaveInt(RE::StaticFunctionTag *base, RE::BSFixedString obj, RE::BSFixedString name, SInt32 value);
+	RE::BSFixedString	CFissEndSave(RE::StaticFunctionTag *base, RE::BSFixedString obj);
+	RE::BSFixedString	CFissSaveTextToTxtFile(RE::StaticFunctionTag *base, RE::BSFixedString filename, RE::BSFixedString text);
 
-	
-	bool RegisterFuncs(VMClassRegistry* registry);
+	bool registerFunctions(RE::BSScript::IVirtualMachine* vm);
+	void initialize();
+	void loadConfig();
 }

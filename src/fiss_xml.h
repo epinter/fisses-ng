@@ -7,7 +7,7 @@ typedef struct
 	void		*io;		// FILE IO pointer
 	char		*xmlData;	// all XML content
 	char		*Data;		// FISS Data content pointer
-	long		eOffset;	// last offset filled zero byte
+	long long		eOffset;	// last offset filled zero byte
 	const char	*errMsg;	// error message
 }
 CFISS;

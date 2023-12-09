@@ -1,0 +1,12 @@
+AccessModifierOffset: -4
+BasedOnStyle: Google
+ColumnLimit: 130
+IndentWidth: 4
+NamespaceIndentation: All
+TabWidth: 4
+UseTab: Never
+AllowShortBlocksOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: None
+AllowShortEnumsOnASingleLine: False
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: None

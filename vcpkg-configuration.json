@@ -1,0 +1,37 @@
+{
+  "default-registry": {
+    "kind": "git",
+    "repository": "https://github.com/Microsoft/vcpkg",
+    "baseline": "85c222bc31ce1a747c98f0dd74ab47baab91744c"
+  },
+  "registries": [
+    {
+      "kind": "git",
+      "repository": "https://gitlab.com/colorglass/vcpkg-colorglass",
+      "baseline": "6309841a1ce770409708a67a9ba5c26c537d2937",
+      "packages": [
+        "articuno",
+        "bethesda-fallout4-scripts",
+        "bethesda-skyrim-scripts",
+        "commonlibf4",
+        "commonlibsse",
+        "commonlibsse-ng",
+        "commonlibsse-ng-ae",
+        "commonlibsse-ng-flatrim",
+        "commonlibsse-ng-prebuilt",
+        "commonlibsse-ng-se",
+        "commonlibsse-ng-vr",
+        "commonlibsse-po3-ae",
+        "commonlibsse-po3-se",
+        "commonlibvr",
+        "f4se",
+        "fully-dynamic-game-engine",
+        "gluino",
+        "hoshi",
+        "script-extender-common",
+        "skse",
+        "tsl-hat-trie"
+      ]
+    }
+  ]
+}
