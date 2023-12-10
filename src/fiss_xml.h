@@ -2,15 +2,13 @@
 #define _CFISS_XML_H_
 
 // FISS object
-typedef struct
-{
-	void		*io;		// FILE IO pointer
-	char		*xmlData;	// all XML content
-	char		*Data;		// FISS Data content pointer
-	long long		eOffset;	// last offset filled zero byte
-	const char	*errMsg;	// error message
-}
-CFISS;
+typedef struct {
+    void* io;            // FILE IO pointer
+    char* xmlData;       // all XML content
+    char* Data;          // FISS Data content pointer
+    long long eOffset;   // last offset filled zero byte
+    const char* errMsg;  // error message
+} CFISS;
 
 //================================================================================================================
 // API
@@ -45,9 +43,9 @@ const char* cfiss_saveTextToTxtFile(const char* filename, const char* text);
 
 void cfiss_xml_decoder(char* str);
 char* cfiss_xml_encoder(const char* str);
-unsigned int cfiss_filename_encode(const char *in, char *out, unsigned int size);
+unsigned int cfiss_filename_encode(const char* in, char* out, unsigned int size);
 
 #ifdef __cplusplus
 }
-#endif 
-#endif // _CFISS_XML_H_
+#endif
+#endif  // _CFISS_XML_H_
