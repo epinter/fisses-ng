@@ -4,6 +4,7 @@
 
 - [Skyrim Script Extender (SKSE)](https://skse.silverlock.org/)
 - [Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444)
+- [Main file from NexusMods (for scripts and ESP)](https://www.nexusmods.com/skyrimspecialedition/mods/13956)
 
 ## ***Build requirements***
 
