@@ -10,3 +10,4 @@ AllowShortFunctionsOnASingleLine: None
 AllowShortEnumsOnASingleLine: False
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: None
+SortIncludes: false
