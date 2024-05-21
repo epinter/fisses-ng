@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.24)
 
 project(
         FISS
-        VERSION 1.4.2
+        VERSION 1.4.3
         LANGUAGES CXX)
 set(PROJECT_LICENSE "MIT")
 set(PROJECT_FRIENDLY_NAME ${PROJECT_NAME})
