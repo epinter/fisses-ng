@@ -5,8 +5,29 @@ using namespace SKSE::stl;
 #include "FissesPlugin.h"
 
 namespace plugin {
+    std::optional<std::filesystem::path> getLogDirectory() {
+        PWSTR buf;
+        SHGetKnownFolderPath(FOLDERID_Documents, KF_FLAG_DEFAULT, nullptr, &buf);
+        std::unique_ptr<wchar_t, decltype(&CoTaskMemFree)> documentsPath{buf, CoTaskMemFree};
+        std::filesystem::path directory{documentsPath.get()};
+        directory.append("My Games"sv);
+
+        if (SKYRIM_REL_VR_CONSTEXPR(REL::Module::IsVR())) {
+            directory.append("Skyrim VR"sv);
+        } else if (std::filesystem::exists("steam_api64.dll"sv)) {
+            directory.append("Skyrim Special Edition"sv);
+        } else if (std::filesystem::exists("Galaxy64.dll"sv)) {
+            directory.append("Skyrim Special Edition GOG"sv);
+        } else if (std::filesystem::exists("eossdk-win64-shipping.dll"sv)) {
+            directory.append("Skyrim Special Edition EPIC"sv);
+        } else {
+            return std::filesystem::current_path().append("skselogs");
+        }
+        return directory.append("SKSE"sv);
+    }
+
     void initializeLogging() {
-        auto path = log_directory();
+        auto path = getLogDirectory();
         if (!path) {
             report_and_fail("Can't find SKSE log directory");
         }
